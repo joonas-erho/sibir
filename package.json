@@ -2,9 +2,10 @@
   "name": "sibir",
   "version": "1.0.0",
   "description": "Sibir Private Discord Bot",
-  "main": "index.js",
+  "main": "src/main.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc --project tsconfig.json && node dist/main.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
     "@discordjs/rest": "^1.0.1",
     "discord.js": "^14.2.0",
     "dotenv": "^16.0.1",
-    "eslint": "^8.21.0"
+    "eslint": "^8.21.0",
+    "esm": "^3.2.25",
+    "ts-node": "^10.9.1"
   }
 }

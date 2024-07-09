@@ -26,12 +26,12 @@ module.exports = {
         size = toss.split('d')[1]
       }
       catch {
-        await interaction.reply('Incorrect input.')
+        await interaction.reply(`Seems like one of the dice doesn't have a size.`)
         return
       }
 
-      if (checkViability(amount) || checkViability(size)) {
-        await interaction.reply('Incorrect input.')
+      if (!checkViability(amount) || !checkViability(size)) {
+        await interaction.reply(`Incorrect input. Make sure all dice have [amount]d[size]. Size can't be larger than 10000.`)
         return
       }
 
@@ -50,8 +50,8 @@ module.exports = {
 }
 
 function checkViability(num) {
-  if (isNaN(num) || num.length === 0 || num < 1 || num > 10000) {
-    return true
+  if (num.toString().contains('.') || isNaN(num) || num.length === 0 || num < 1 || num > 10000) {
+    return false
   }
-  return false
+  return true
 }

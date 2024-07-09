@@ -1,4 +1,5 @@
 {
+  "extends": "@antfu",
   "parserOptions": {
     "ecmaVersion": "latest"
   },
